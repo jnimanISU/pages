@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Audience: The Study</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple flow-chart line */
+        .flow-connector {
+            position: relative;
+        }
+        .flow-connector::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -2rem; /* Half of .arrow-down height */
+            height: 2rem;
+            width: 4px;
+            background-color: #93c5fd; /* blue-300 */
+            transform: translateX(-50%);
+        }
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 12px solid #93c5fd; /* blue-300 */
+            margin: 1rem auto;
+        }
+        /* Loading Spinner */
+        .loader {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #3b82f6; /* Blue */
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto p-4 md:p-8">
+
+        <!-- Header Card -->
+        <header class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-8 md:p-12 rounded-2xl shadow-2xl text-center">
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4">Know Your Audience</h1>
+            <p class="text-lg md:text-xl text-blue-100 font-light">The benefits and pitfalls of generating plain language summaries for audiences beyond the "general" one.</p>
+        </header>
+
+        <!-- Section: The "Big Idea" -->
+        <section class="bg-white p-8 rounded-2xl shadow-lg mt-10 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-4">The "General Audience" is Not One Group</h2>
+            <p class="text-lg text-slate-700 max-w-2xl mx-auto">
+                AI can simplify complex science, but who is it simplifying for? This study explored how simplifying text affects readers differently based on one key factor:
+            </p>
+            <div class="text-3xl font-bold text-indigo-600 mt-4">
+                User Topic Familiarity
+            </div>
+        </section>
+
+        <!-- Arrow Connector -->
+        <div class="arrow-down"></div>
+
+        <!-- Section: The Study Setup -->
+        <section class="flow-connector bg-white p-8 rounded-2xl shadow-lg">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-6 text-center">The Two Key Variables</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card 1: Familiarity -->
+                <div class="bg-slate-100 p-6 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <!-- Icon: User Groups -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-2.121l-7.288 7.288A3 3 0 002 22v-2h5m10-6a3 3 0 100-6 3 3 0 000 6zM6 9a3 3 0 100-6 3 3 0 000 6z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-slate-800">1. User Familiarity</h3>
+                    </div>
+                    <p class="text-slate-600">Readers were grouped as...<br>
+                        <span class="font-semibold text-red-600">Low-Familiarity</span> (Novices) <br>
+                        <span class="font-semibold text-green-600">High-Familiarity</span> (Experts/Hobbyists)
+                    </p>
+                </div>
+                <!-- Card 2: Complexity -->
+                <div class="bg-slate-100 p-6 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <!-- Icon: Document Text -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-slate-800">2. Text Complexity</h3>
+                    </div>
+                     <p class="text-slate-600">They were given summaries that were...<br>
+                        <span class="font-semibold text-blue-600">Simple</span> (Plain Language) <br>
+                        <span class="font-semibold text-purple-600">Complex</span> (Original Abstract)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arrow Connector -->
+        <div class="arrow-down"></div>
+
+        <!-- Section: Core Findings -->
+        <section class="flow-connector">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-6 text-center">Core Findings: A Tale of Two Audiences</h2>
+            
+            <!-- Finding 1: Low-Familiarity -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-green-500 mb-8">
+                <div class="flex items-center mb-4">
+                    <!-- Icon: Check Circle -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-500 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="text-2xl font-bold text-green-700">For LOW-Familiarity Readers (Novices)...</h3>
+                </div>
+                <p class="text-lg text-slate-700 ml-16">
+                    ...the results were clear: <strong class="text-slate-900">Simpler summaries were the best.</strong> They led to a better reading experience and improved understanding.
+                </p>
+                <div class="mt-4 ml-16 bg-green-100 text-green-800 p-4 rounded-lg font-semibold">
+                    Takeaway: For novices, simplification works!
+                </div>
+            </div>
+
+            <!-- Finding 2: High-Familiarity (The "Pitfall") -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-yellow-500">
+                <div class="flex items-center mb-4">
+                     <!-- Icon: Exclamation Triangle -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-yellow-500 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.876c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <h3 class="text-2xl font-bold text-yellow-700">For HIGH-Familiarity Readers (Experts)...</h3>
+                </div>
+                <p class="text-lg text-slate-700 ml-16 mb-6">
+                    ...the results were complicated and revealed a critical <strong class="text-slate-900">"pitfall"</strong>.
+                </p>
+
+                <!-- Perception vs. Behavior -->
+                <div class="ml-16 space-y-4">
+                    <!-- Perception -->
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="font-bold text-blue-800 text-lg">WHAT THEY SAID (Perception):</div>
+                        <p class="text-blue-700">They *reported* that simple summaries were <strong class="text-blue-900">just as engaging</strong> as the complex ones.</p>
+                    </div>
+                    <!-- Behavior -->
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <div class="font-bold text-red-800 text-lg">WHAT THEY DID (Behavior):</div>
+                        <p class="text-red-700">They <strong class="text-red-900">skipped more content</strong> and <strong class="text-red-900">ignored information</strong> in the simple summaries.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 ml-16 bg-yellow-100 text-yellow-800 p-4 rounded-lg font-semibold">
+                    Takeaway: Experts felt engaged, but were behaviorally *disengaged*, skipping key details in simple text.
+                </div>
+            </div>
+        </section>
+
+        <!-- Arrow Connector -->
+        <div class="arrow-down"></div>
+
+        <!-- Section: The Final Conclusion -->
+        <section class="flow-connector bg-gradient-to-r from-red-600 to-orange-500 text-white p-8 md:p-12 rounded-2xl shadow-2xl text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">The Pitfall of "One-Size-Fits-All"</h2>
+            <p class="text-lg md:text-xl text-red-50 font-light max-w-3xl mx-auto">
+                Relying *only* on simple summaries for a "general" audience can backfire.
+                <br><br>
+                Knowledgeable readers (a key part of the "general public") may miss important information because the text is *too* simple, even if they report a good experience.
+            </p>
+        </section>
+
+        <!-- ✨ New Gemini API Section (Updated) ✨ -->
+        <section class="mt-10">
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-6 text-center">Try It Yourself: Audience-Aware Summarization ✨</h2>
+                <p class="text-lg text-slate-700 max-w-2xl mx-auto text-center mb-6">
+                    See the study's concept in action. Summarize long, complex text for different audiences using the Gemini API.
+                </p>
+
+                <!-- Input Area -->
+                <div class="mb-4">
+                    <label for="complexText" class="block text-sm font-medium text-slate-700 mb-1">Complex Text to Summarize:</label>
+                    <textarea id="complexText" rows="10" class="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">Chlorophyll, the green pigment found in plants, algae, and cyanobacteria, is essential for photosynthesis, the process by which light energy is converted into chemical energy. This complex molecule absorbs light most strongly in the blue and red portions of the electromagnetic spectrum, while reflecting and transmitting green light, which is why plants appear green. There are several types of chlorophyll, notably chlorophyll a and chlorophyll b, which differ slightly in their chemical structure and absorption spectra. Chlorophyll a is the principal pigment involved in the light-dependent reactions, directly converting light energy, while chlorophyll b acts as an accessory pigment, absorbing light energy and transferring it to chlorophyll a. This intricate system is housed within chloroplasts, specifically in the thylakoid membranes, where chlorophyll molecules are organized into photosystems. The efficiency of this energy conversion is fundamental to life on Earth, as it produces the oxygen we breathe and the organic compounds that form the basis of most food chains.</textarea>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 mb-6">
+                    <div class="flex-grow w-full sm:w-auto">
+                        <label for="audienceSelect" class="block text-sm font-medium text-slate-700 mb-1">Target Audience:</label>
+                        <select id="audienceSelect" class="w-full p-3 border border-slate-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option value="novice" selected>Low Familiarity (Novice)</option>
+                            <option value="expert">High Familiarity (Expert)</option>
+                        </select>
+                    </div>
+                    <button id="summarizeButton" class="w-full sm:w-auto mt-6 sm:mt-0 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold rounded-lg shadow-md hover:from-blue-700 hover:to-indigo-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out">
+                        Summarize ✨
+                    </button>
+                </div>
+
+                <!-- Status & Output -->
+                <div>
+                    <!-- Status Message (Loading/Error) -->
+                    <div id="statusMessage" class="text-center p-4"></div>
+                    
+                    <!-- Simplified Output -->
+                    <div id="simplifiedOutput" class="bg-slate-100 p-6 rounded-lg shadow-inner min-h-[100px] text-slate-800 whitespace-pre-wrap" style="display: none;">
+                        <!-- Generated content will appear here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ✨ End of New Section ✨ -->
+
+        <!-- Footer -->
+        <footer class="text-center mt-10 p-4">
+            <p class="text-sm text-slate-500">Based on the study "Know Your Audience" by Tal August, Kyle Lo, Noah A. Smith, and Katharina Reinecke.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const complexTextEl = document.getElementById('complexText');
+        const audienceSelectEl = document.getElementById('audienceSelect');
+        const summarizeButtonEl = document.getElementById('summarizeButton');
+        const statusMessageEl = document.getElementById('statusMessage');
+        const simplifiedOutputEl = document.getElementById('simplifiedOutput');
+
+        const apiKey = ""; // API key is handled by the environment
+
+        // System prompt for the AI
+        const systemPrompt = "You are a helpful science communicator. Your task is to generate a *concise summary* of a complex, technical text for a specific audience. The summary must be *significantly shorter* than the original text. Do not add any preamble or extra formatting, just provide the summary.";
+
+        // Function to make the API call with exponential backoff
+        async function generateContentWithRetry(payload, maxRetries = 5) {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            let delay = 1000; // Start with 1 second
+
+            for (let i = 0; i <= maxRetries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errorBody = await response.text();
+                        throw new Error(`HTTP error! status: ${response.status}, body: ${errorBody}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    // Check for valid candidate response
+                    if (result.candidates && result.candidates[0] && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts[0].text) {
+                        return result; // Success
+                    } else {
+                        // Handle cases where the API call "succeeded" but didn't return text
+                        // This might be due to safety settings or an empty response
+                        let errorMessage = "The model returned an empty response.";
+                        if (result.candidates && result.candidates[0] && result.candidates[0].finishReason) {
+                            errorMessage += ` (Reason: ${result.candidates[0].finishReason})`;
+                        }
+                        throw new Error(errorMessage);
+                    }
+
+                } catch (error) {
+                    console.error(`Attempt ${i + 1} failed:`, error.message);
+                    if (i === maxRetries) {
+                        // Last attempt failed, re-throw the error
+                        throw error;
+                    }
+                    // Wait for the delay and then retry
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Double the delay for the next retry
+                }
+            }
+        }
+
+        summarizeButtonEl.addEventListener('click', async () => {
+            const textToSummarize = complexTextEl.value;
+            const audience = audienceSelectEl.value;
+
+            if (!textToSummarize.trim()) {
+                statusMessageEl.textContent = 'Please enter some text to summarize.';
+                statusMessageEl.className = 'text-center p-4 text-red-600';
+                return;
+            }
+
+            // Show loading spinner
+            statusMessageEl.innerHTML = '<div class="loader"></div>';
+            simplifiedOutputEl.style.display = 'none';
+            summarizeButtonEl.disabled = true;
+
+            // Craft the user prompt based on audience
+            let userQuery;
+            if (audience === 'novice') {
+                userQuery = `Please create a *short and simple summary* (around 1-2 sentences) of the following text for a general audience with no prior knowledge of the topic. Focus on the main idea and be *very concise*. Text: ${textToSummarize}`;
+            } else { // expert
+                userQuery = `Please create a *concise technical summary* (around 2-3 sentences) of the following text for a knowledgeable audience (e.g., a hobbyist or student in the field). Retain key technical details (like chlorophyll a/b, photosystems) but be *brief* and focus on the core findings. Text: ${textToSummarize}`;
+            }
+
+            // Construct the payload
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            try {
+                const result = await generateContentWithRetry(payload);
+                
+                // Extract and display the text
+                const simplifiedText = result.candidates[0].content.parts[0].text;
+                simplifiedOutputEl.textContent = simplifiedText;
+                simplifiedOutputEl.style.display = 'block';
+                statusMessageEl.innerHTML = ''; // Clear loading spinner
+
+            } catch (error) {
+                console.error('Error summarizing text:', error);
+                statusMessageEl.innerHTML = `An error occurred: ${error.message}. Please try again.`;
+                statusMessageEl.className = 'text-center p-4 text-red-600';
+                simplifiedOutputEl.style.display = 'none';
+            } finally {
+                summarizeButtonEl.disabled = false; // Re-enable the button
+            }
+        });
+
+    </script>
+</body>
+</html>
